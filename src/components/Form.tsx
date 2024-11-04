@@ -1,12 +1,13 @@
-import { useState, ChangeEvent, FormEvent, Dispatch } from "react";
+import { useState, ChangeEvent, FormEvent, Dispatch, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { categories } from "../data/categories";
 import { ActivityT } from "../types";
-import { ActivityActionsT } from "../reducers/activityReducer";
+import { ActivityActionsT, ActivityStateT } from '../reducers/activityReducer';
 
 type FormProps = {
-  dispatch: Dispatch<ActivityActionsT>;
+  dispatch: Dispatch<ActivityActionsT>,
+  state: ActivityStateT
 };
 
 const initialState: ActivityT = {
@@ -16,8 +17,16 @@ const initialState: ActivityT = {
   calories: 0,
 };
 
-export default function Form({ dispatch }: FormProps) {
-  const [activity, setActivity] = useState<ActivityT>(initialState);
+export default function Form({ dispatch, state }: FormProps) {
+  const [activity, setActivity] = useState<ActivityT>(initialState)
+
+    useEffect(() => {
+        if(state.activeId) {
+            const selectedActivity = state.activities.filter( stateActivity => stateActivity.id === state.activeId ) [0]
+            setActivity(selectedActivity)
+        }
+    }, [state.activeId])
+
 
   const handleChage = (
     e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>
@@ -41,7 +50,7 @@ export default function Form({ dispatch }: FormProps) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    dispatch({ type: "save-activity", paypload: { newActivity: activity } });
+    dispatch({ type: "save-activity", payload: { newActivity: activity } });
 
     setActivity({
       ...initialState,
