@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <header className="bg-lime-600 py-3">
+      <header className="bg-[#e5b53b] py-3">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <h1 className="text-center text-lg font-bold text-white uppercase">
             Contador de Calorias
@@ -33,7 +33,7 @@ function App() {
         </div>
       </header>
 
-      <section className="bg-lime-500 py-20 px-5">
+      <section className="bg-[url('/img/bg-image.avif')] bg-cover bg-center py-20 px-5">
         <div className="max-w-4xl mx-auto">
           <Form
           dispatch={dispatch}

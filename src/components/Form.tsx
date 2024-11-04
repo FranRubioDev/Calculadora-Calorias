@@ -97,7 +97,7 @@ export default function Form({ dispatch, state }: FormProps) {
 
       <div className="grid grid-cols-1 gap-3">
         <label htmlFor="calories" className="font-bold">
-          Kcal ingeridas:
+          Kcal:
         </label>
         <input
           id="calories"
