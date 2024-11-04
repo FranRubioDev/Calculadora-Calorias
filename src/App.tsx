@@ -21,7 +21,7 @@ function App() {
       <header className="bg-[#e5b53b] py-3">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <h1 className="text-center text-lg font-bold text-white uppercase">
-            Contador de Calorias
+            Contador de Calorías
           </h1>
           <button
           className="bg-gray-700 hover:bg-orange-600 p-2 font-bold uppercase text-white cursor-pointer rounded text-sm disabled:opacity-30"
