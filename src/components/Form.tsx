@@ -97,13 +97,13 @@ export default function Form({ dispatch, state }: FormProps) {
 
       <div className="grid grid-cols-1 gap-3">
         <label htmlFor="calories" className="font-bold">
-          Calorias:
+          Kcal ingeridas:
         </label>
         <input
           id="calories"
           type="number"
           className="border border-slate-300 p-2 rounded-lg w-full bg-white"
-          placeholder="Nº Calorias. Ej. 250"
+          placeholder="Nº Kcalorias. Ej. 250"
           value={activity.calories}
           onChange={handleChage}
         />

@@ -29,7 +29,7 @@ export default function ActivityList({ activities, dispatch }: ActivityListProps
 
 
 
-      { isEmptyActivities ? <p className="text-center py-5">No hay actividades aún</p> : 
+      { isEmptyActivities ? <p className="text-center py-5">No hay ningún registro aún</p> : 
       
       activities.map((activity) => (
         <div
@@ -47,7 +47,7 @@ export default function ActivityList({ activities, dispatch }: ActivityListProps
 
             <p className="font-black text-4xl text-lime-500">
               {activity.calories}
-              <span>Calorias</span>
+              <span> Kcal</span>
             </p>
           </div>
             <div className="flex gap-5 items-center">

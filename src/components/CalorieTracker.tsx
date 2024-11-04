@@ -21,7 +21,7 @@ export default function CalorieTracker({activities}: CalorieTrackerProps) {
         <div className="flex flex-col items-center md:flex-row md:justify-between gap-5 mt-10">
         <CalorieDisplay
             calories={caloriesConsumed}
-            text="Consumidas"
+            text="Ingeridas"
 
         />
 
